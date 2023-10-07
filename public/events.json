@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "picture": "https://i.ibb.co/w7BTCrk/bridal.jpg",
+    "title": "Bridal shower",
+    "description": " A bridal shower is a pre-wedding celebration typically organized by the bride's friends or family members in honor of the bride-to-be."
+  },
+  {
+    "id": "2",
+    "picture": "https://i.ibb.co/s3nXL06/MEHENDI.jpg",
+    "title": "Mehendi Night",
+    "description": "A Mehndi party is a night of fun with lots of food, music, and dancing."
+  },
+  {
+    "id": "3",
+    "picture": "https://i.ibb.co/PYtQ02h/ceremony.jpg",
+    "title": "Weeding Ceremony",
+    "description": "A wedding ceremony is a significant event where a couple publicly declares their commitment to each other and their intent to marry. "
+  },
+  {
+    "id": "4",
+    "picture": "https://i.ibb.co/pvMTJGJ/anniversery.jpg",
+    "title": "Anniversary Celebration",
+    "description": "the anniversary of the day on which you were married"
+  },
+  {
+    "id": "5",
+    "picture": "https://i.ibb.co/3p4W8gN/wedding.jpg",
+    "title": "Engagement ceremony",
+    "description": "The first big event that we’re hosting is the Engagement Ceremony and this post speaks briefly about what this event is all about."
+  },
+  {
+    "id": "6",
+    "picture": "https://i.ibb.co/m0bLyY1/card.jpg",
+    "title": "Wedding Invitations and Stationery",
+    "description": "Create wedding programs, place cards, and thank-you cards."
+  }
+]
