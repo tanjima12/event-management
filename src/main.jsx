@@ -6,6 +6,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Root/Root";
 import Home from "./Component/Home/Home";
 import LogIn from "./Component/LogIn/LogIn";
+import Register from "./Component/Register/Register";
+import AuthProvider, {
+  AuthContext,
+} from "./Component/AuthProvider/AuthProvider";
+import Details from "./Component/Details/details";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,12 +26,26 @@ const router = createBrowserRouter([
         path: "/login",
         element: <LogIn></LogIn>,
       },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/details",
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

@@ -1,37 +1,46 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
-const LogIn = () => {
-  const { SignIn } = useContext(AuthContext);
-  const location = useLocation();
-  const navigate = useNavigate();
-  const handleLogIn = (e) => {
+const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const handleRegister = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    SignIn(email, password)
+    const name = form.get("name");
+    console.log(email, password, name);
+
+    createUser(email, password)
       .then((result) => {
         console.log(result.user);
-
-        navigate(location.state ? location?.state : "/");
       })
       .catch((error) => console.error(error));
   };
+
   return (
     <div>
       <Navbar></Navbar>
-      <form onSubmit={handleLogIn}>
+      <form onSubmit={handleRegister}>
         <div className="relative flex w-96 flex-col mt-20 ml-[600px] rounded-xl bg-orange-100 bg-clip-border text-gray-700 shadow-md">
           <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gray-300  text-black shadow-lg ">
             <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
-              Log In
+              Register
             </h3>
           </div>
           <div className="flex flex-col gap-4 p-6">
+            <div className="relative h-11 w-full min-w-[200px]">
+              <input
+                className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                placeholder="Name"
+                type="text"
+                name="name"
+                required
+              />
+            </div>
             <div className="relative h-11 w-full min-w-[200px]">
               <input
                 className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
@@ -82,13 +91,14 @@ const LogIn = () => {
           </div>
           <div className="p-6 pt-0">
             <button className="block w-full select-none rounded-lg bg-gradient-to-tr bg-red-200 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-              Sign In
+              Register
             </button>
             <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
-              Do not have an account?
-              <Link to="/register">
+              Do have an account?
+              <Link to="/login">
                 <button className="ml-1 block font-sans text-sm font-bold leading-normal text-pink-500 antialiased">
-                  Register
+                  {" "}
+                  Log In
                 </button>
               </Link>
             </p>
@@ -99,4 +109,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default Register;
