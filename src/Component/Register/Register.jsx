@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import swal from "sweetalert";
 
 const Register = () => {
+  // const [registerError, setRegisterError] = useState("");
+  // const [seccess, setSuccess] = useState("");
   const { createUser } = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
@@ -12,7 +15,21 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
     const name = form.get("name");
+
     console.log(email, password, name);
+
+    // setRegisterError("");
+    // setSuccess("");
+
+    if (password.length < 6) {
+      return swal("Sorry!", "...Your password character is less than 6!");
+    } else if (/^[a-zA-Z0-9]*$/.test(password)) {
+      return swal("Sorry!", "...You have not any special Character!");
+    } else if (!/[A-Z]/.test(password)) {
+      return swal("Sorry!", "...You have not any Capital letter!");
+    } else {
+      swal("Good job!", "You clicked the button!", "success");
+    }
 
     createUser(email, password)
       .then((result) => {
@@ -59,7 +76,7 @@ const Register = () => {
                 required
               />
             </div>
-            <div className="-ml-2.5">
+            {/* <div className="-ml-2.5">
               <div className="inline-flex items-center">
                 <label
                   className="relative flex cursor-pointer items-center rounded-full p-3"
@@ -80,14 +97,8 @@ const Register = () => {
                     </svg>
                   </span>
                 </label>
-                <label
-                  className="mt-px cursor-pointer select-none font-light text-gray-700"
-                  htmlFor="checkbox"
-                >
-                  Forget Password?
-                </label>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="p-6 pt-0">
             <button className="block w-full select-none rounded-lg bg-gradient-to-tr bg-red-200 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
@@ -97,7 +108,6 @@ const Register = () => {
               Do have an account?
               <Link to="/login">
                 <button className="ml-1 block font-sans text-sm font-bold leading-normal text-pink-500 antialiased">
-                  {" "}
                   Log In
                 </button>
               </Link>

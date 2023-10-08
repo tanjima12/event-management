@@ -3,6 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
+import swal from "sweetalert";
+
 const LogIn = () => {
   const { SignIn } = useContext(AuthContext);
   const location = useLocation();
@@ -13,6 +15,16 @@ const LogIn = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+
+    if (password.length < 6) {
+      return swal("Sorry!", "...Your password character is less than 6!");
+    } else if (/^[a-zA-Z0-9]*$/.test(password)) {
+      return swal("Sorry!", "...You have not any special Character!");
+    } else if (!/[A-Z]/.test(password)) {
+      return swal("Sorry!", "...You have not any Capital letter!");
+    } else {
+      swal("Good job!", "You clicked the button!", "success");
+    }
     SignIn(email, password)
       .then((result) => {
         console.log(result.user);

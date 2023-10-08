@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ChooseUs from "../ChooseUs/ChooseUs";
+import { useEffect, useState } from "react";
 
 const Services = () => {
   const [services, setServices] = useState([]);
+  const { id } = services;
   useEffect(() => {
     fetch("events.json")
       .then((res) => res.json())
@@ -39,7 +40,7 @@ const Services = () => {
                   <h5 className=" block font-DancingScript text-3xl font-semibold  leading-snug tracking-normal text-white antialiased">
                     {service.description}
                   </h5>
-                  <Link to="/details">
+                  <Link to={`/details/${id}`}>
                     <button className="btn bg-red-300 border-none px-5 mt-2 py-2">
                       Details
                     </button>
