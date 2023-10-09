@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleSignout = () => {
@@ -52,11 +53,10 @@ const Navbar = () => {
         </div>
       </nav>
       <div className="flex gap-3 items-center">
-        <FaUserAlt className="text-3xl text-white"></FaUserAlt>
-
         {user ? (
           <>
-            <span className="text-white">{user.photoUrl}</span>
+            <img className="h-12 w-12 rounded-full" src={user.photoURL}></img>
+            <p className="text-white">{user.displayName}</p>
             <button
               onClick={handleSignout}
               className="btn btn-outline bg-red-200 px-10 border-none mr-3"
@@ -65,11 +65,14 @@ const Navbar = () => {
             </button>
           </>
         ) : (
-          <Link to="/login">
-            <button className="btn btn-outline bg-red-200 px-10 border-none mr-3">
-              LogIn
-            </button>
-          </Link>
+          <>
+            <FaUserAlt className="text-3xl text-white"></FaUserAlt>
+            <Link to="/login">
+              <button className="btn btn-outline bg-red-200 px-10 border-none mr-3">
+                LogIn
+              </button>
+            </Link>
+          </>
         )}
       </div>
       {/* <div className="navbar-end">

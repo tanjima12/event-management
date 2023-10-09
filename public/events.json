@@ -1,38 +1,50 @@
 [
   {
     "id": "1",
+    "details": "Bridal showers are typically held a few weeks to a few months before the wedding. The exact timing can vary depending on the preferences of the bride and her hosts.",
     "picture": "https://i.ibb.co/w7BTCrk/bridal.jpg",
     "title": "Bridal shower",
-    "description": " A bridal shower is a pre-wedding celebration typically organized by the bride's friends or family members in honor of the bride-to-be."
+    "description": " A bridal shower is a pre-wedding celebration organized by the bride's friends or family members.",
+    "price": "75$"
   },
   {
     "id": "2",
+    "details": " Mehendi night, also known as a Mehndi or Henna night, is a traditional pre-wedding celebration in many South Asian cultures, particularly in India and Pakistan. It typically takes place one or two days before the wedding and is dedicated to the application of henna (mehndi) designs on the bride's hands and feet. ",
     "picture": "https://i.ibb.co/s3nXL06/MEHENDI.jpg",
     "title": "Mehendi Night",
-    "description": "A Mehndi party is a night of fun with lots of food, music, and dancing."
+    "description": "A Mehndi party is a night of fun with lots of food, music, and dancing.",
+    "price": "55$"
   },
   {
     "id": "3",
+    "details": " A wedding ceremony is a formal and often religious or cultural event that marks the union of two individuals in marriage. It is a significant and joyous occasion celebrated in various ways around the world.  ",
     "picture": "https://i.ibb.co/PYtQ02h/ceremony.jpg",
     "title": "Weeding Ceremony",
-    "description": "A wedding ceremony is a significant event where a couple publicly declares their commitment to each other and their intent to marry. "
+    "description": "A wedding ceremony is a significant event where a couple publicly declares their commitment intent to marry. ",
+    "price": "80$"
   },
   {
     "id": "4",
+    "details": " Anniversary ceremonies are typically held on significant wedding anniversaries, such as the 25th (silver), 50th (golden), or even milestone anniversaries like the 10th or 20th. Some couples also choose to celebrate their first anniversary in a special way. ",
     "picture": "https://i.ibb.co/pvMTJGJ/anniversery.jpg",
     "title": "Anniversary Celebration",
-    "description": "the anniversary of the day on which you were married"
+    "description": "the anniversary of the day on which you were married",
+    "price": "70$"
   },
   {
     "id": "5",
+    "details": " Engagement ceremonies typically occur after a couple has made the decision to marry but before the actual wedding. The timing can vary, but it's often several months to a year or more before the wedding day. ",
+
     "picture": "https://i.ibb.co/3p4W8gN/wedding.jpg",
     "title": "Engagement ceremony",
-    "description": "The first big event that we’re hosting is the Engagement Ceremony and this post speaks briefly about what this event is all about."
+    "description": "The first big event that wee hosting is the Engagement Ceremony.",
+    "price": "50$"
   },
   {
     "id": "6",
-    "picture": "https://i.ibb.co/m0bLyY1/card.jpg",
+    "details": " If someone else is hosting or paying for the wedding (e.g., parents), their names can be included. For example, Mr and Mrs. John Smith request the pleasure of your company at the marriage of their daughter, Sarah Smith, to...",
     "title": "Wedding Invitations and Stationery",
-    "description": "Create wedding programs, place cards, and thank-you cards."
+    "description": "Create wedding programs, place cards, and thank-you cards.",
+    "price": "60$"
   }
 ]

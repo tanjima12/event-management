@@ -1,14 +1,31 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import swal from "sweetalert";
 
 const LogIn = () => {
+  const [mainUser, setMainUser] = useState(null);
   const { SignIn } = useContext(AuthContext);
+  const auth = getAuth();
+
   const location = useLocation();
   const navigate = useNavigate();
+  const provider = new GoogleAuthProvider();
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(result.user);
+        setMainUser(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   const handleLogIn = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -16,22 +33,28 @@ const LogIn = () => {
     const email = form.get("email");
     const password = form.get("password");
 
-    if (password.length < 6) {
-      return swal("Sorry!", "...Your password character is less than 6!");
-    } else if (/^[a-zA-Z0-9]*$/.test(password)) {
-      return swal("Sorry!", "...You have not any special Character!");
-    } else if (!/[A-Z]/.test(password)) {
-      return swal("Sorry!", "...You have not any Capital letter!");
-    } else {
-      swal("Good job!", "You clicked the button!", "success");
-    }
+    // if (password.length < 6) {
+    //   return swal("Sorry!", "...Your password character is less than 6!");
+    // } else if (/^[a-zA-Z0-9]*$/.test(password)) {
+    //   return swal("Sorry!", "...You have not any special Character!");
+    // } else if (!/[A-Z]/.test(password)) {
+    //   return swal("Sorry!", "...You have not any Capital letter!");
+    // } else {
+    //   swal("Good job!", "You clicked the button!", "success");
+    // }
     SignIn(email, password)
       .then((result) => {
         console.log(result.user);
+        // setSuccess("Successfully log in");
 
         navigate(location.state ? location?.state : "/");
+        return swal("Good job!", "You clicked the button!", "success");
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        return swal("your password or Email wrong!");
+      });
+    // swal("Good job!", "error", "error");
   };
   return (
     <div>
@@ -105,6 +128,9 @@ const LogIn = () => {
               </Link>
             </p>
           </div>
+          <button onClick={handleGoogleSignIn} className="btn bg-red-200">
+            Log in With Google
+          </button>
         </div>
       </form>
     </div>

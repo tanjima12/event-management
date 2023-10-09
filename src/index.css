@@ -12,3 +12,10 @@
   background-attachment: fixed;
   background-position: center;
 }
+.appoitpic {
+  background-image: url("https://i.ibb.co/6g0CZMD/danie-franco-7-Xq-L-DVu-BMw-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 150px;
+}
