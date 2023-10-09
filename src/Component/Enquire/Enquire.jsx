@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Enquire = () => {
   return (
-    <div className="ml-32 mt-52">
+    <div className=" ml-28 lg:ml-32 mt-40 lg:mt-52">
       <h1 className="font-DancingScript text-5xl font-semibold text-gray-100">
         To Making Your
       </h1>

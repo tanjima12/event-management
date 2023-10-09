@@ -20,14 +20,14 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="flex mr-5">
-      <nav className="mx-auto block w-full max-w-screen-xl    py-2 px-4 text-white   backdrop-saturate-200 lg:px-8 lg:py-4">
+    <div className="lg:flex lg:mr-5">
+      <nav className="mx-auto block w-full max-w-screen-xl py-2 px-4 text-white   backdrop-saturate-200 lg:px-8 lg:py-4">
         <div>
-          <div className="container mx-auto flex justify-between items-center text-gray-900">
-            <div className="flex flex-row-reverse gap-2 items-center">
+          <div className="container mx-auto lg:flex justify-between items-center text-gray-900">
+            <div className="flex flex-row-reverse gap-2  items-center">
               <a
                 href="#"
-                className="mr-4 block cursor-pointer py-1.5 font-sans text-white text-3xl font-bold leading-normal text-inherit antialiased"
+                className="mr-32 lg:mr-4 block cursor-pointer py-1.5 font-sans text-white text-3xl font-bold leading-normal text-inherit antialiased"
               >
                 <i>T</i>a<i>R</i>a|S
               </a>
@@ -36,7 +36,7 @@ const Navbar = () => {
                 src="https://i.ibb.co/xGNbhsJ/assortment-leaves-flowers-white-background.jpg"
               ></img>
             </div>
-            <ul className="hidden items-center gap-6 lg:flex text-white text-3xl mr-10 font-bold">
+            <ul className=" items-center flex flex-col lg:flex-row gap-8 mb-3 mt-3 lg:flex text-white text-3xl mr-10 font-bold">
               {navlink}
             </ul>
           </div>
@@ -45,14 +45,14 @@ const Navbar = () => {
             data-collapse="navbar"
           >
             <div className="container mx-auto pb-2">
-              <ul className="mt-2 mb-4 flex flex-col gap-2 text-3xl font-bold">
+              <ul className="mt-2 mb-4 flex flex-col gap-2 text-3xl text-white font-bold">
                 {navlink}
               </ul>
             </div>
           </div>
         </div>
       </nav>
-      <div className="flex gap-3 items-center">
+      <div className="  ml-24 lg:ml-1 flex gap-3 items-center">
         {user ? (
           <>
             <img className="h-12 w-12 rounded-full" src={user.photoURL}></img>

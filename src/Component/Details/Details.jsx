@@ -21,7 +21,7 @@ const Details = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="relative w-full max-w-[40rem] bg-slate-400 rounded-xl bg-transparent bg-clip-border mt-10 ml-[450px] text-gray-700 shadow-none">
+      <div className="relative w-full max-w-[40rem] bg-slate-400 rounded-xl bg-transparent bg-clip-border mt-10 lg:ml-[450px] text-gray-700 shadow-none">
         <div className="relative  mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 text-gray-700 shadow-none">
           <div className=" w-full">
             <div className="flex items-center justify-between">
@@ -37,7 +37,7 @@ const Details = () => {
             {details}
           </p>
         </div>
-        <button className="btn px-8 py-3 bg-orange-700 text-white ml-72 mb-5">
+        <button className="btn px-8 py-3 bg-orange-700 text-white lg:ml-72 mb-5">
           Price:{price}
         </button>
       </div>

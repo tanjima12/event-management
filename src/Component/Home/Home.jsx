@@ -31,7 +31,7 @@ const Home = () => {
               ...We provides...
             </h1>
           </div>
-          <div className="grid grid-cols-3 mt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 mt-10">
             {services.map((services) => (
               <Services key={services.id} services={services}></Services>
             ))}
@@ -39,9 +39,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className=" flex items-center ml-16 mt-10">
+      <div className=" lg:flex items-center lg:ml-16 mt-10">
         <Differebcities></Differebcities>
-        <div className="ml-32">
+        <div className=" ml-14 lg:ml-32">
           <h1 className="text-5xl text-indigo-200 mt-20 font-DancingScript font-semibold">
             Visit Our Sites
           </h1>

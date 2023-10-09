@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 text-base-content h-52 mt-10 bg-gradient-to-r from-black via-transparent to-[rgba(87,52,22,1)]">
-        <nav className="ml-40 mt-8">
+      <footer className="lg:footer lg:p-10 text-base-content  lg:mt-10 bg-gradient-to-r from-black via-transparent to-[rgba(87,52,22,1)]">
+        <nav className="lg:ml-40 mt-8">
           <h1 className="flex text-white text-2xl gap-5">
             <BsTelephone className="text-white text-3xl mb-2"></BsTelephone>{" "}
             01236987123
@@ -22,17 +22,17 @@ const Footer = () => {
         <nav>
           <a
             href="#"
-            className=" block cursor-pointer py-1.5 font-sans ml-52 text-white text-3xl font-bold leading-normal text-inherit antialiased"
+            className=" block cursor-pointer py-1.5 font-sans ml-32 lg:ml-52 text-white text-3xl font-bold leading-normal text-inherit antialiased"
           >
             <i>T</i>a<i>R</i>a|S
           </a>
           <Link to="/appoitment">
-            <button className="btn px-10 py-3 bg-orange-400 border-none ml-36 mb-8">
+            <button className="btn px-10 py-3 bg-orange-400 border-none ml-16 lg:ml-36 mb-8">
               Book An Appointment
             </button>
           </Link>
         </nav>
-        <nav className="ml-60 mt-8">
+        <nav className="ml-16 lg:ml-60  lg:mt-8">
           <aside>
             <p className="text-white text-2xl">
               Copyright © 2023 -TaRa|S Banqueting Suites.

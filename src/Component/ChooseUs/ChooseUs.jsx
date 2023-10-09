@@ -1,14 +1,14 @@
 const ChooseUs = () => {
   return (
-    <div className="mt-10 ml-52">
+    <div className="mt-10 lg:ml-52">
       <h1 className="text-5xl font-medium text-white mb-3">Why choose us?</h1>
-      <div className="flex gap-10">
+      <div className="flex-col flex lg:flex-row gap-10">
         <img
-          className="mt-10 ml-10 rounded-full w-60"
+          className="mt-10 ml-3 lg:ml-10 rounded-full h-[250px] lg:h-[250px] w-60"
           src="https://i.ibb.co/HP07NbG/20908904-6369740.jpg"
         ></img>
         <p
-          className="text-white text-xl mt-16 "
+          className="text-white text-xl mt-5 lg:mt-16 "
           data-aos="fade-up"
           data-aos-duration="3000"
         >
@@ -23,7 +23,7 @@ const ChooseUs = () => {
         </p>
       </div>
 
-      <button className="rounded-lg ml-[450px] mb-10 px-8 py-3 bg-orange-300 border-none text-white mt-3">
+      <button className="rounded-lg lg:ml-[450px] mb-2 lg:mb-10 px-8 py-3 bg-orange-300 border-none text-white mt-3">
         See Our Booklet
       </button>
     </div>

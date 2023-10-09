@@ -13,7 +13,7 @@ const Services = ({ services }) => {
   return (
     <div>
       <div
-        className=" relative ml-10 grid mb-8 h-[30rem] w-full max-w-[24rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-white"
+        className=" relative lg:ml-10 grid mb-8 h-[30rem] w-full max-w-[24rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-white"
         data-aos="zoom-in"
       >
         <div
